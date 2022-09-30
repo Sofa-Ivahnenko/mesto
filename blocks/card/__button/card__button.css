@@ -1,0 +1,14 @@
+.card__button{
+    background: url(../../../image/card/Vector\ \(1\).png);
+    background-color: rgba(28,28,28,0);
+    border: none;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 22px;
+
+}
+.card__button:hover {
+    opacity: 0.5;
+  }

@@ -1,0 +1,14 @@
+.profile__add-button{
+    background: url(../../../image/profile/Vector.png) no-repeat center;
+    background-size: 22px 22px;
+    border-radius: 2px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 50px;
+    outline: none;
+    padding: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 150px;
+    background-color: rgba(28,28,28,0);
+}
