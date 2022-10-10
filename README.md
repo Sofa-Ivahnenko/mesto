@@ -1,6 +1,6 @@
 # Проект: " Mesto".
 
-* https://sofa-ivahnenko.github.io/mesto/ 
+*  [Ссылка на проект] (https://sofa-ivahnenko.github.io/mesto/).
 ***
 
 ## Обзор:
