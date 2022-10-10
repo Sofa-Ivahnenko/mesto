@@ -1,6 +1,11 @@
 .profile__add{
-    padding: 35px 0 35px 244px;
-    margin: 0;
-    max-width: 150px;
-    min-height: 50px;
+    margin: 35px 0 35px 244px;
 }
+
+@media screen and (max-width: 1023px) {
+    .profile__add {
+      align-self: center;
+      width: 282px;
+      margin: 0 auto;
+    }
+  }
