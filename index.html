@@ -1,6 +1,5 @@
 <!DOCTYPE html> 
 <html lang="ru">
-
     <head> 
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
@@ -8,12 +7,10 @@
         <title>Место</title> 
     </head>
     <body>
-
         <div class ="page">  
             <header class="header">
                 <img class="header__logo" src="./images/header/logo.svg" alt="Логотип">
             </header>
-
             <main>
                 <section class="profile">
                     <img class="profile__avatar" src="./images/profile/image.svg" alt="Жак-Ив Кусто">
@@ -24,7 +21,7 @@
                         </div>
                         <p class="profile__subtitle">Исследователь океана</p>
                     </div>
-                    <div class="profile__add">
+                    <div class="profile__pluse">
                         <button class="profile__add-button" type="button"></button>
                     </div>
                 </section>
@@ -72,13 +69,10 @@
                             </div>
                         </article>
                     </section>
-            
             </main>
-        
             <footer class="footer">
                 <p class="footer__copyright">&copy;2020 Mesto Russia</p>
             </footer>
-
             <section class="popup">
                 <div class="popup__container">
                     <form class="popup__content" method="post" name="profile">
@@ -86,15 +80,14 @@
                         <fieldset class="popup__form">
                             <input
                                 type="text"
-                                class=" popup__input popup__form_name"
+                                class=" popup__input popup__input_name"
                                 placeholder="Имя"
-                                value="Жак-Ив Кусто"
-                                
+                                value="Жак-Ив Кусто"   
                             />
                             <input
                                 type="text"
                                 placeholder="О себе"
-                                class="popup__input popup__form_composition"
+                                class="popup__input popup__input_composition"
                                 value="Исследователь океана"
                             />
                         </fieldset>
@@ -103,7 +96,6 @@
                         <button type="button" class="popup__close-button"></button>
                 </div>
             </section>
-
             <script src="./script/index.js"></script>
         </div>
     </body>
