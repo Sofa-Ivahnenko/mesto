@@ -12,7 +12,7 @@
                 <img class="header__logo" src="./images/header/logo.svg" alt="Логотип">
             </header>
             <main>
-                <div class="profile">
+                <section class="profile">
                     <img class="profile__avatar" src="./images/profile/image.svg" alt="Жак-Ив Кусто">
                     <div class="profile__info">
                         <div class="profile__text">
@@ -21,10 +21,8 @@
                         </div>
                         <p class="profile__subtitle">Исследователь океана</p>
                     </div>
-                    <div class="profile__pluse">
-                        <button class="profile__add-button" type="button"></button>
-                    </div>
-                </div>
+                    <button class="profile__add-button" type="button"></button>
+                </section>
                     <section class="cards">
                         <article class="card">
                             <img class="card__image" src="./images/card/kirill-pershin-1088404-unsplash.png" alt="Старинный замок на фоне холмов">
@@ -80,23 +78,25 @@
                         <h2 class="popup__heading">Редактировать профиль</h2>
                         <fieldset class="popup__form">
                             <input
+                                name ="person"
                                 type="text"
-                                class=" popup__input popup__input_name"
+                                class=" popup__input popup__input_type_name"
                                 placeholder="Имя"
                                 value="Жак-Ив Кусто"   
                             />
                             <input
+                                name="about"
                                 type="text"
                                 placeholder="О себе"
-                                class="popup__input popup__input_composition"
+                                class="popup__input popup__input_type_composition"
                                 value="Исследователь океана"
                             />
                         </fieldset>
                         <button type="submit" class="popup__save-button">Сохранить</button>
-                        <button type="button" class="popup__close-button"></button>
                     </form>
+                    <button type="button" class="popup__close-button"></button>
                 </div>
             </section>
-            <script src="./scripts/index.js"></script>image.png
+            <script src="./scripts/index.js"></script>
     </body>
 </html>

@@ -12,6 +12,7 @@
     transition: opacity 0.2s ease-in-out;
     background-color: rgba(28,28,28,0);
     align-self: flex-end;
+    margin: 35px 0 35px 244px;
 }
 
 .profile__add-button:hover {
@@ -22,6 +23,9 @@
     .profile__add-button {
       background-size: 16px 16px;
       width: 100%;
+      width: 282px;
+      align-self: center;
+      margin: 0 auto;
     }
   }
 
