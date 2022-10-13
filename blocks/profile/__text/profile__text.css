@@ -1,7 +1,6 @@
 .profile__text{
     display: flex;
-    align-items: flex-start;
-    width: 336px;
+    padding: 0;
 }
 
 

@@ -3,7 +3,7 @@ const popupOpenButton = document.querySelector('.profile__button-edit');
 const popupCloseButton = popup.querySelector('.popup__close-button');
 const popupSaveButton = popup.querySelector('.popup__save-button');
 
-let formElement = document.querySelector('.popup__form');
+let formElement = document.querySelector('.popup__content');
 let nameInput = popup.querySelector('.popup__input_type_name');
 let jobInput = popup.querySelector('.popup__input_type_composition');
 let person = document.querySelector('.profile__title');
@@ -28,6 +28,5 @@ function popupSave(evt) {
 
 popupOpenButton.addEventListener('click', popupOpen);
 popupCloseButton.addEventListener('click', popupClose);
-popupSaveButton.addEventListener('click', popupSave);
 
 formElement.addEventListener('submit', popupSave);
