@@ -1,0 +1,11 @@
+.popupView__image{
+    width: 816px;
+    height: 540px; 
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    .popupView__image{
+        width: 433px;
+    }
+}

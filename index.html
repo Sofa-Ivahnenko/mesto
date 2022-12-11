@@ -24,48 +24,7 @@
                     <button class="profile__add-button" type="button"></button>
                 </section>
                     <section class="cards">
-                        <article class="card">
-                            <img class="card__image" src="./images/card/kirill-pershin-1088404-unsplash.png" alt="Старинный замок на фоне холмов">
-                            <div class="card__content">
-                                <h2 class="card__title">Карачаевск</h2>
-                                <button class="card__button" type="button"></button>
-                            </div>
-                        </article>
-                        <article class="card">
-                            <img class="card__image" src="./images/card/kirill-pershin-1556355-unsplash.png" alt="Пейзаж заказата">
-                            <div class="card__content">
-                                <h2 class="card__title">Гора Эльбрус</h2>
-                                <button class="card__button" type="button"></button>
-                            </div>
-                        </article>
-                        <article class="card">
-                            <img class="card__image" src="./images/card/kirill-pershin-1404681-unsplash.png" alt="Снежные горные фершины на фоне опушки леса">
-                            <div class="card__content">
-                                <h2 class="card__title">Домбай</h2>
-                                <button class="card__button" type="button"></button>
-                            </div>
-                        </article>
-                        <article class="card">
-                            <img class="card__image" src="./images/card/kirill-pershin-1404681-unsplash.png" alt="Пейзаж заката">
-                            <div class="card__content">
-                                <h2 class="card__title">Гора Эльбрус</h2>
-                                <button class="card__button" type="button"></button>
-                            </div>
-                        </article>
-                        <article class="card">
-                            <img class="card__image" src="./images/card/kirill-pershin-1556355-unsplash.png" alt="Снежные горные фершины на фоне опушки леса">
-                            <div class="card__content">
-                                <h2 class="card__title">Домбай</h2>
-                                <button class="card__button" type="button"></button>
-                            </div>
-                        </article>
-                        <article class="card">
-                            <img class="card__image" src="./images/card/kirill-pershin-1088404-unsplash.png" alt="Старинный замок на фоне холмов">
-                            <div class="card__content">
-                                <h2 class="card__title">Карачаево-Черкессия</h2>
-                                <button class="card__button" type="button"></button>
-                            </div>
-                        </article>
+                       
                     </section>
             </main>
             <footer class="footer">
@@ -97,6 +56,54 @@
                     <button type="button" class="popup__close-button"></button>
                 </div>
             </section>
+
+            <section class="popup popupCard">
+                <div class="popup__container">
+                    <form class="popupCard__content" method="post" name="cardAdd">
+                        <h2 class="popup__heading">Новое место</h2>
+                        <fieldset class="popup__form">
+                            <input
+                                name ="name"
+                                type="text"
+                                class=" popup__input popup__input_type_card-name"
+                                placeholder="Название" 
+                            />
+                            <input
+                                name="link"
+                                type="text"
+                                placeholder="Ссылка на картинку"
+                                class="popup__input popup__input_type_link"
+                            />
+                        </fieldset>
+                        <button type="submit" class="popupCard__save-button">Создать</button>
+                    </form>
+                    <button type="button" class="popup__close-button"></button>
+                </div>
+            </section>
+
+            <section class="popup popupView">
+                <div class="popupView__content">
+                    <button type="button" class="popupView__close-button"></button>
+                    <figure class="poopupView__container">
+                        <img src="" alt="" class="popupView__image">
+                        <figcaption class="popupView__subtitle"></figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <template id="card-template">
+                <div class="card">
+                        <img class="card__image">
+                    <div class="card__content">
+                        <h2 class="card__title"></h2>
+                        <button class="card__button" type="button"></button>
+                    </div>
+                    <button class="card__button-delet" type="button"></button>
+                </div>
+            </template>
+
             <script src="./scripts/index.js"></script>
+
+
     </body>
 </html>
