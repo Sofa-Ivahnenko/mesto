@@ -42,11 +42,11 @@ let cardInput = popupCard.querySelector('.popup__input_type_card-name');
 let linkInput = popupCard.querySelector('.popup__input_type_link');
 
 function popupOpenCard() {
-    popupCard.classList.add('popupCard_opened');
+    popupCard.classList.add('popup_opened');
 }
 
 function popupCloseCard() {
-  popupCard.classList.remove('popupCard_opened');
+  popupCard.classList.remove('popup_opened');
 }
 
 function popupSaveCard(evt) {
@@ -116,13 +116,13 @@ image.src = cardElemets.link;
 image.alt = cardElemets.name;
 
 image.addEventListener('click', function(){
-  popupImageView.classList.add('popupView_opened');
+  popupImageView.classList.add('popup_opened');
   popupImageView.querySelector('.popupView__image').src = cardElemets.link;
   popupImageView.querySelector('.popupView__subtitle').textContent = cardElemets.name;
 });
 
 function popupImageBtn () {
-  popupImageView.classList.remove('popupView_opened');
+  popupImageView.classList.remove('popup_opened');
 }
 ImageBtn.addEventListener('click', popupImageBtn);
 

@@ -43,8 +43,7 @@
 @import url(../blocks/popupCard/_opened/popupCard_opened.css);
 
 @import url(../blocks/popupView/popupView.css);
-@import url(../blocks/popupView/__conteiner/popupView__conteiner.css);
+@import url(../blocks/popupView/__content/popupView__content.css);
 @import url(../blocks/popupView/__image/popupView__image.css);
 @import url(../blocks/popupView/__subtitle/popupView__subtitle.css);
 @import url(../blocks/popupView/_opened/popupView_opened.css);
-@import url(../blocks/popupView/__close-button/popupView__close-button.css);
