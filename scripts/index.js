@@ -59,7 +59,7 @@ popupCloseButton.addEventListener('click', popupCloseCard);
 form.addEventListener('submit', popupSaveCard);
 
 const popupImageView = document.querySelector ('.popupView');
-const ImageBtn = popupImageView.querySelector('.popupView__close-button');
+const ImageBtn = popupImageView.querySelector('.popup__close-button');
 
 //Массиы карточек
 const cardsList = [
