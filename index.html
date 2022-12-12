@@ -23,15 +23,15 @@
                     </div>
                     <button class="profile__add-button" type="button"></button>
                 </section>
-                    <section class="cards">
+                    <ul class="cards">
                        
-                    </section>
+                    </ul>
             </main>
             <footer class="footer">
                 <p class="footer__copyright">&copy;2020 Mesto Russia</p>
             </footer>
         </div>
-            <section class="popup">
+            <section class="popup popupEdit">
                 <div class="popup__container">
                     <form class="popup__content" method="post" name="profile">
                         <h2 class="popup__heading">Редактировать профиль</h2>
@@ -42,6 +42,7 @@
                                 class=" popup__input popup__input_type_name"
                                 placeholder="Имя"
                                 value="Жак-Ив Кусто"   
+                                required = "true" 
                             />
                             <input
                                 name="about"
@@ -49,6 +50,7 @@
                                 placeholder="О себе"
                                 class="popup__input popup__input_type_composition"
                                 value="Исследователь океана"
+                                required = "true" 
                             />
                         </fieldset>
                         <button type="submit" class="popup__save-button">Сохранить</button>
@@ -59,20 +61,22 @@
 
             <section class="popup popupCard">
                 <div class="popup__container">
-                    <form class="popupCard__content" method="post" name="cardAdd">
+                    <form  id="cardform" class="popupCard__content" method="post" name="cardAdd">
                         <h2 class="popup__heading">Новое место</h2>
                         <fieldset class="popup__form">
                             <input
                                 name ="name"
                                 type="text"
                                 class=" popup__input popup__input_type_card-name"
-                                placeholder="Название" 
+                                placeholder="Название"
+                                required = "true" 
                             />
                             <input
                                 name="link"
                                 type="text"
                                 placeholder="Ссылка на картинку"
                                 class="popup__input popup__input_type_link"
+                                required = "true" 
                             />
                         </fieldset>
                         <button type="submit" class="popup__save-button popupCard__save-button">Создать</button>
@@ -92,14 +96,14 @@
             </section>
 
             <template id="card-template">
-                <div class="card">
-                        <img class="card__image">
+                <li class="card">
+                        <img class="card__image" alt="">
                     <div class="card__content">
                         <h2 class="card__title"></h2>
                         <button class="card__button" type="button"></button>
                     </div>
                     <button class="card__button-delet" type="button"></button>
-                </div>
+                </li>
             </template>
 
             <script src="./scripts/index.js"></script>
