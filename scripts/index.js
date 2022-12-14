@@ -1,7 +1,7 @@
 //попап редактирования профиля
 const popupEdit = document.querySelector('.popupEdit');
 const openButton = document.querySelector('.profile__button-edit');
-const closeButton = popupEdit.querySelector('.popupEdit__close-button');
+const closeEditPopupButton = popupEdit.querySelector('.popupEdit__close-button');
 const saveButton = popupEdit.querySelector('.popup__save-button');
 
 const formEdit = document.querySelector('.popup__content');
@@ -13,7 +13,7 @@ const about = document.querySelector('.profile__subtitle');
 //попап добавления  
 const popupCard = document.querySelector('.popupCard');
 const popupOpenButton = document.querySelector('.profile__add-button');
-const popupCloseButton = popupCard.querySelector('.popupCard__close-button');
+const popupAddCloseButton = popupCard.querySelector('.popupCard__close-button');
 const popupSaveButton = popupCard.querySelector('.popupCard__save-button');
 
 const formAdd = document.querySelector('.popupCard__content');
@@ -22,7 +22,7 @@ const linkInput = popupCard.querySelector('.popup__input_type_link');
 
 //попап карточек
 const cardContainer = document.querySelector('.cards');
-const forma = document.querySelector ('.popupCard__content');
+const formaCardAdd = document.querySelector ('.popupCard__content');
 const inputCardName = document.querySelector ('.popup__input_type_card-name');
 const inputCardLink = document.querySelector ('.popup__input_type_link');
 
@@ -164,7 +164,7 @@ const renderCard = (cardElemets) => {
 cardContainer.prepend(generateCard(cardElemets));
 }
 
-forma.addEventListener("submit",handleSubmitAddCardFom);
+formaCardAdd.addEventListener("submit",handleSubmitAddCardFom);
 
 cardsList.forEach((cardElemets)=>{
 renderCard(cardElemets);
@@ -174,12 +174,12 @@ renderCard(cardElemets);
 
 //обработчик попапа редактирования профиля
 openButton.addEventListener('click', popupEditOpen);
-closeButton.addEventListener('click', popupEditClose);
+closeEditPopupButton.addEventListener('click', popupEditClose);
 formEdit.addEventListener('submit',  handleSubmitFormEdit);
 
 //обработчик попапа добавления
 popupOpenButton.addEventListener('click', popupOpenCard);
-popupCloseButton.addEventListener('click', popupCloseCard);
+popupAddCloseButton.addEventListener('click', popupCloseCard);
 formAdd.addEventListener('submit',  handleSubmitFormAdd);
 
  
