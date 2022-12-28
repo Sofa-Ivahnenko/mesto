@@ -1,5 +1,6 @@
 //попап редактирования профиля
 const popups = document.querySelectorAll('.popup');
+const closeButton = document.querySelector('.popup__close-button');
 
 const popupEdit = document.querySelector('.popupEdit');
 const popupEditOpenButton = document.querySelector('.profile__button-edit');
@@ -63,48 +64,18 @@ const cardsList = [
   }
 ];
 
-//действия с карочками
-const handleDeleteCard = (event) => {
-  event.target.closest('.card').remove();
-  };
-  
-  const handleLikeCard = (event) => {
-    event.target.classList.toggle('card__button-like');
-  };
-  
-  const handleViewCard = (event) => {
-    openPopup(popupImageView)
-    closePopup(popupImageView)
-  };
-
-const  handleKeyUp = (evt) => {
-  const key = event.key;
-  if(evt.key === 'Escape'){
-    const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup);
-  }
-}
-
-popups.forEach((popup) => {
-  popup.addEventListener("click", function (evt) {
-    if (evt.target.classList.contains("popup_opened") || evt.target.classList.contains("popup__close-button")) {
-      closePopup(popup);
-    }
-  });
-});
-
-
 //функция открытия попап
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keyup', handleKeyUp);
 }
-
 //функция закрытия попап
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keyup', handleKeyUp);
 }
+
+
 
 //функции попапа редактирования профиля
 function openPopupEdit() {
@@ -126,8 +97,8 @@ function handleSubmitFormEdit(evt) {
 
  //функции попапа добавления
 function openPopupCard() {
+  openPopup(popupCard);
   formaCardAdd.reset();
-  openPopup(popupCard)
 }
 
 function closePopupCard() {
@@ -139,6 +110,54 @@ function handleSubmitFormAdd(evt) {
   closePopupCard();
 }
 
+
+
+//удаление карточки
+const handleDeleteCard = (event) => {
+  event.target.closest('.card').remove();
+  };
+// лайк на карточку
+const handleLikeCard = (event) => {
+  event.target.classList.toggle('card__button-like');
+  };
+//откртыие изображения карточки на экра
+const handleViewCard = (event) => {
+    openPopup(popupImageView)
+    };
+
+
+//закрытие поапов на escape
+const  handleKeyUp = (evt) => {
+  const escapeButton = 'Escape';
+  if(evt.key === escapeButton){
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
+//закрытие попапов на кнопку и оверлей
+popups.forEach((popup) => {
+  popup.addEventListener("click", function  (evt) {
+    if (evt.target.classList.contains("popup_opened") || evt.target.classList.contains("popup__close-button")) {
+      closePopup(popup);
+    }
+  });
+});
+
+
+//валидация
+const forms = document.querySelector ('.popup__content');
+const personInput = document.querySelector ('#person');
+const aboutInput = document.querySelector ('#about');
+const titleInput = document.querySelector ('#name');
+const urlInput = document.querySelector ('#link');
+
+
+function handleSubmitForms (evt) {
+evt.preventDefault();
+}
+forms.addEventListener('submit', handleSubmitForms);
+
+enableValidation(validationConfig);
 
 
 //генерация карточек
@@ -166,10 +185,6 @@ deletBtn.addEventListener('click', handleDeleteCard);
 const likeBtn = newCard.querySelector('.card__button');
 likeBtn.addEventListener('click', handleLikeCard);
 
-const viewBtn = popupImageView.querySelector('.popupView__close-button');
-viewBtn.addEventListener('click', handleViewCard);
-
-
 return newCard;
 };
 
@@ -193,42 +208,8 @@ renderCard(cardElemets);
 
 //обработчик попапа редактирования профиля
 popupEditOpenButton.addEventListener('click', openPopupEdit);
-popupEditCloseButton.addEventListener('click', closePopupEdit);
 formEdit.addEventListener('submit',  handleSubmitFormEdit);
 
 //обработчик попапа добавления
 popupAddOpenButton.addEventListener('click', openPopupCard);
-popupAddCloseButton.addEventListener('click', closePopupCard);  
 formAdd.addEventListener('submit',  handleSubmitFormAdd);
-
-
-const validationConfig = {
-  formSelector: '.popup__content',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save-button',
-  inactiveButtonClass: 'popup__save-button_disabled',
-  inputErrorClass: 'popup__input-error',
-  errorClass: 'popup__input-error_visible'
-  };
-  
-  const forms = document.querySelector ('.popup__content');
-  const personInput = document.querySelector ('#person');
-  const aboutInput = document.querySelector ('#about');
-  const titleInput = document.querySelector ('#name');
-  const urlInput = document.querySelector ('#link');
-  
-
-  function handleSubmit (evt) {
-  evt.preventDefault();
-  console.log({
-    inputPerson: personInput.value,
-    inputAbout: aboutInput.value,
-    inputName: titleInput.value,
-    inputLink: urlInput.value
-  })
-  }
-  forms.addEventListener('submit', handleSubmit);
-  
-  enableValidation(validationConfig);
- 
-  
