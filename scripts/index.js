@@ -34,7 +34,15 @@ const cardTemplate = document.querySelector ('#card-template').content.querySele
 //попап открытия фото
 const popupImageView = document.querySelector ('.popupView');
 
+//кнопка escape
+const escapeButton = 'Escape';
 
+// константы для валидации форм
+const forms = document.querySelector ('.popup__content');
+const personInput = document.querySelector ('#person');
+const aboutInput = document.querySelector ('#about');
+const titleInput = document.querySelector ('#name');
+const urlInput = document.querySelector ('#link');
 
 //Массиы карточек
 const cardsList = [
@@ -84,15 +92,11 @@ function openPopupEdit() {
     jobInput.value = about.textContent;
 }
 
-function closePopupEdit () {
-  closePopup(popupEdit)
-}
-
 function handleSubmitFormEdit(evt) {
     evt.preventDefault(); 
     person.textContent = nameInput.value;
     about.textContent = jobInput.value;
-    closePopupEdit();
+    closePopup(popupEdit);
   }
 
  //функции попапа добавления
@@ -101,13 +105,9 @@ function openPopupCard() {
   formaCardAdd.reset();
 }
 
-function closePopupCard() {
-  closePopup(popupCard) 
-}
-
 function handleSubmitFormAdd(evt) {
   evt.preventDefault(); 
-  closePopupCard();
+  closePopup(popupCard);
 }
 
 
@@ -128,7 +128,6 @@ const handleViewCard = (event) => {
 
 //закрытие поапов на escape
 const  handleKeyUp = (evt) => {
-  const escapeButton = 'Escape';
   if(evt.key === escapeButton){
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
@@ -145,13 +144,6 @@ popups.forEach((popup) => {
 
 
 //валидация
-const forms = document.querySelector ('.popup__content');
-const personInput = document.querySelector ('#person');
-const aboutInput = document.querySelector ('#about');
-const titleInput = document.querySelector ('#name');
-const urlInput = document.querySelector ('#link');
-
-
 function handleSubmitForms (evt) {
 evt.preventDefault();
 }
