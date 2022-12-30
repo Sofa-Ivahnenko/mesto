@@ -144,10 +144,7 @@ popups.forEach((popup) => {
 
 
 //валидация
-function handleSubmitForms (evt) {
-evt.preventDefault();
-}
-forms.addEventListener('submit', handleSubmitForms);
+forms.addEventListener('submit', handleSubmitFormAdd);
 
 enableValidation(validationConfig);
 
