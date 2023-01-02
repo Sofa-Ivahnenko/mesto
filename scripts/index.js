@@ -143,11 +143,6 @@ popups.forEach((popup) => {
 });
 
 
-//валидация
-forms.addEventListener('submit', handleSubmitFormAdd);
-
-enableValidation(validationConfig);
-
 
 //генерация карточек
 const generateCard = (cardElemets) => {
@@ -187,8 +182,6 @@ const renderCard = (cardElemets) => {
 cardContainer.prepend(generateCard(cardElemets));
 }
 
-formaCardAdd.addEventListener("submit",handleSubmitAddCardFom);
-
 cardsList.forEach((cardElemets)=>{
 renderCard(cardElemets);
 });
@@ -202,3 +195,8 @@ formEdit.addEventListener('submit',  handleSubmitFormEdit);
 //обработчик попапа добавления
 popupAddOpenButton.addEventListener('click', openPopupCard);
 formAdd.addEventListener('submit',  handleSubmitFormAdd);
+
+//обработчик создания новых карточек
+formaCardAdd.addEventListener("submit",handleSubmitAddCardFom);
+
+deletBtn.addEventListener('click', handleDeleteCard);

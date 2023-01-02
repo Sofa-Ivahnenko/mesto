@@ -60,3 +60,5 @@ function showInputError (formElement,inputElement, config) {
     setEventListeners(formElement,config)
     })
     };
+
+    enableValidation(validationConfig);
