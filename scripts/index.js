@@ -105,12 +105,6 @@ function openPopupCard() {
   formaCardAdd.reset();
 }
 
-function handleSubmitFormAdd(evt) {
-  evt.preventDefault(); 
-  closePopup(popupCard);
-}
-
-
 
 //удаление карточки
 const handleDeleteCard = (event) => {
@@ -176,6 +170,7 @@ return newCard;
 const handleSubmitAddCardFom = (event) => {
   event.preventDefault();
   renderCard({name: inputCardName.value, link: inputCardLink.value});
+  buttonAddSave.setAttribute("disabled", "");
 };
  
 const renderCard = (cardElemets) => {
@@ -194,7 +189,7 @@ formEdit.addEventListener('submit',  handleSubmitFormEdit);
 
 //обработчик попапа добавления
 popupAddOpenButton.addEventListener('click', openPopupCard);
-formAdd.addEventListener('submit',  handleSubmitFormAdd);
+
 
 //обработчик создания новых карточек
 formaCardAdd.addEventListener("submit",handleSubmitAddCardFom);
