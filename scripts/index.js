@@ -171,6 +171,7 @@ const handleSubmitAddCardFom = (event) => {
   event.preventDefault();
   renderCard({name: inputCardName.value, link: inputCardLink.value});
   buttonAddSave.setAttribute("disabled", "");
+  closePopup(popupCard);
 };
  
 const renderCard = (cardElemets) => {
