@@ -62,11 +62,11 @@ validationEditForm.enableValidation();
 const escapeButton = 'Escape';
 
 // константы для валидации форм
-//const forms = document.querySelector ('.popup__content');
-// const personInput = document.querySelector ('#person');
-// const aboutInput = document.querySelector ('#about');
-// const titleInput = document.querySelector ('#name');
-// const urlInput = document.querySelector ('#link');
+const forms = document.querySelector ('.popup__content');
+const personInput = document.querySelector ('#person');
+const aboutInput = document.querySelector ('#about');
+const titleInput = document.querySelector ('#name');
+const urlInput = document.querySelector ('#link');
 
 
 //функция открытия попап
@@ -140,15 +140,21 @@ function handleCardClick (name, link){
   title.textContent = name;
   image.src = link;
 }
-
-cardsList.forEach((item) => {
-  // Создадим экземпляр карточки
+function createCard (item){
   const card = new Card(item,'#card-template', handleCardClick);
   // Создаём карточку и возвращаем наружу
   const cardTemplate  = card.generateCard();
+  return cardTemplate;
 
   // Добавляем в DOM
-  document.querySelector('.cards').append(cardTemplate);
+ // container.prepend(cardTemplate);
+}
+function renderCard(item, container) {
+  container.prepend(createCard(item));
+}
+
+cardsList.forEach((item) => {
+  renderCard(item, cardContainer);
 });  
 
 
@@ -186,12 +192,12 @@ cardsList.forEach((item) => {
 
 
 //создание новых карточек
-// const handleSubmitAddCardFom = (event) => {
-//   event.preventDefault();
-//   renderCard({name: inputCardName.value, link: inputCardLink.value});
-//   buttonAddSave.setAttribute("disabled", "");
-//   closePopup(popupCard);
-// };
+const handleSubmitAddCardFom = (event) => {
+  event.preventDefault();
+  renderCard({name: inputCardName.value, link: inputCardLink.value}, cardContainer);
+  buttonAddSave.setAttribute("disabled", "");
+  closePopup(popupCard);
+};
  
 // const renderCard = (cardElemets) => {
 // cardContainer.prepend(generateCard(cardElemets));
@@ -212,6 +218,6 @@ popupAddOpenButton.addEventListener('click', openPopupCard);
 
 
 //обработчик создания новых карточек
-// formaCardAdd.addEventListener("submit",handleSubmitAddCardFom);
+formaCardAdd.addEventListener("submit",handleSubmitAddCardFom);
 
 //deletBtn.addEventListener('click', handleDeleteCard);
