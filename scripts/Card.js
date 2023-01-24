@@ -5,7 +5,7 @@ class Card {
         this._templateSelector = templateSelector;
         this._handleCardClick = handleCardClick;
     }
-    _getTamplate () {
+    _getTemplate () {
        const cardTemplate = document
        .querySelector (this._templateSelector)
        .content
@@ -19,11 +19,14 @@ class Card {
     generateCard() {
         // Запишем разметку в приватное поле _element. 
         // Так у других элементов появится доступ к ней.
-        this._element = this._getTamplate ();
+        this._element = this._getTemplate ();
         this._setEventListeners();
+
+        
 
 
         // Добавим данные
+
 
         this._element.querySelector('.card__image').src= this._link;
         this._element.querySelector('.card__image').alt = this._name;
@@ -33,14 +36,16 @@ class Card {
         return this._element;
       } 
 
+     
+
       _handleLikeButton() {
         this._element.querySelector('.card__button').classList.toggle('card__button-like');
       }
 
       _handleDeleteButton(){
         this._element.remove();
+        this._element = null;
       }
-
 
       _setEventListeners() {
        

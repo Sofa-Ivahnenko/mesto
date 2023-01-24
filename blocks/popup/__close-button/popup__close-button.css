@@ -15,4 +15,34 @@
 .popup__close-button:hover {
   opacity: 0.6;
 }
+/* 
+@media screen and (max-width: 1000px) {
+  .popup__close-button{
+    right: 30px;
+    top: -40px;
+  }
+} */
+
+@media screen and (max-width: 900px) {
+  .popup__close-button{
+    right: 20px;
+    top: -40px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .popup__close-button{
+    right: 10px;
+    top: -40px;
+  }
+}
+
+
+@media screen and (max-width: 390px) {
+  .popup__close-button{
+    right: 40px;
+    top: -40px;
+  }
+}
 
