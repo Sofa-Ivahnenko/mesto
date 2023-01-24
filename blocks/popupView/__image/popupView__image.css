@@ -5,12 +5,24 @@
 
 @media screen and (max-width: 900px) {
     .popupView__image{
-        width: 433px;
+        width: 650px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .popupView__image{
+        width: 450px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .popupView__image{
-        width: 320px;
+        width: 400px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .popupView__image{
+        width: 300px;
+        height: 400px;
     }
 }

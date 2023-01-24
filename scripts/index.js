@@ -94,18 +94,18 @@ function openImagePopup (name, link){
   title.textContent = name;
   image.src = link;
 }
-function cardData (item){
-  const card = new Card(item,'#card-template', openImagePopup);
+function createCard (cardData){
+  const card = new Card(cardData,'#card-template', openImagePopup);
   // Создаём карточку и возвращаем наружу
   const cardTemplate  = card.generateCard();
   return cardTemplate;
 }
-function renderCard(item, container) {
-  container.prepend(cardData(item));
+function renderCard(cardData, container) {
+  container.prepend(createCard(cardData));
 }
 
-cardsList.forEach((item) => {
-  renderCard(item, cardsContainer);
+cardsList.forEach((cardData) => {
+  renderCard(cardData, cardsContainer);
 });  
 
 //создание новых карточек
