@@ -36,4 +36,10 @@ const validationConfig = {
     errorClass: 'popup__input-error_visible'
 }
 
+export const popupsConfig ={
+  popupEditCard: '.popupEdit',
+  popupAddCard: '.popupCard',
+  popupImageOpen: '.popupView'
+}
+
 export {validationConfig};

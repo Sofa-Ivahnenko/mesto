@@ -1,4 +1,4 @@
-class Card {
+export class Card {
     constructor (data,templateSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
@@ -6,11 +6,8 @@ class Card {
         this._handleCardClick = handleCardClick;
     }
     _getTemplate () {
-       const cardTemplate = document
-       .querySelector (this._templateSelector)
-       .content
-       .querySelector('.card')
-       .cloneNode(true);
+      //  const cardTemplate = document
+      return document.querySelector (this._templateSelector).content.querySelector('.card').cloneNode(true);
 
        return cardTemplate;
     }
@@ -40,6 +37,10 @@ class Card {
         this._element = null;
       }
 
+      _openImagePopup(){
+        this._handleCardClick(this._name, this._link);
+      }
+
       _setEventListeners() {
        
         this._button.addEventListener('click', () => {
@@ -51,7 +52,8 @@ class Card {
         });
       
         this._image.addEventListener('click', () => {
-          this._handleCardClick(this._name, this._link);
+          this._openImagePopup();
+          // this._handleCardClick(this._name, this._link);
         });
 }
 }
