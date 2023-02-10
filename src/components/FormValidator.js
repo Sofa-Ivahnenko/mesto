@@ -51,6 +51,7 @@ export class  FormValidator {
   }
 
   _setEventListeners (){
+    this._formElement.reset();
     this.toggleButtonState();
 
     this._inputList.forEach((inputElement)=> {

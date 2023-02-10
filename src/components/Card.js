@@ -15,6 +15,7 @@ export class Card {
         // Запишем разметку в приватное поле _element. 
         // Так у других элементов появится доступ к ней.
         this._element = this._getTemplate ();
+        this._delet = this._element.querySelector('.card__button-delet');
         this._button = this._element.querySelector('.card__button');
         this._image = this._element.querySelector('.card__image');
         this._setEventListeners();
@@ -46,13 +47,12 @@ export class Card {
             this._handleLikeButton();
         });
 
-        this._element.querySelector('.card__button-delet').addEventListener('click', () => {
+        this._delet.addEventListener('click', () => {
             this._handleDeleteButton();
         });
       
         this._image.addEventListener('click', () => {
           this._openImagePopup();
-          this._handleCardClick(this._name, this._link);
         });
 }
 }

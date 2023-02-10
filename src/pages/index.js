@@ -1,10 +1,12 @@
 import Card from '../components/Card.js';
-import { cardsList, validationConfig } from '../utils/constants.js';
+import { cardsList} from '../utils/constants.js';
+import { validationConfig} from '../utils/constants.js'
 import { buttonOpenAddPopup,buttonOpenEditPopup,formEditCard,formAddCard} from '../utils/elements.js';
 import { FormValidator } from '../components/FormValidator.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
+import PopupWithImage from '../components/PopupWithImage.js';
 
 
 
@@ -21,7 +23,7 @@ const sectionCard = new Section ({items: cardsList,
     sectionCard.addItem(cardTemplate);
   }
 }, 
-'#card-template');
+'.cards');
 sectionCard.renderItems();
 
 
@@ -30,51 +32,50 @@ buttonOpenAddPopup.addEventListener('click', ()=> classAddPopup.open());
 
 
 const classEditPopup = new PopupWithForm('.popupEdit',handleSubmitEditForm);
-// // classEditPopup.setEventListeners();
+classEditPopup.setEventListeners();
 
 
 const classAddPopup = new PopupWithForm('.popupCard', handleSubmitAddNewCard);
-// // classAddPopup.setEventListeners();
+classAddPopup.setEventListeners();
 
 
-const imagePopupOpen = new PopupWithImage('.popupView');
+const imagePopupOpen = new PopupWithImage ('.popupView');
+imagePopupOpen.setEventListeners();
 
-function openImagePopup (){ 
-  imagePopupOpen.open();
-}
+function openImagePopup(name, link) { 
+  imagePopupOpen.open(name, link);
+};
 
 const userInfo = new UserInfo ({
-	nameSelector: '.profile__title',
-	descriptionSelector: '.profile__paragraph'
+	name: '.profile__title',
+	description: '.profile__paragraph'
 });
 
 
 function handleSubmitEditForm(value) {
-  userInfo.setUserInfo(value)
+  console.log(value);
+  userInfo.setUserInfo(value.person, value.about)
   classEditPopup.close();
+ 
 }
 
 function handleSubmitAddNewCard (value) {
-  const newUserCard = {
-    name: value.name,
-    link: value.link
-  }
-  const userCard = createCard(newUserCard);
-  sectionCard(newUserCard)
-  userCard.close();
+  
+  const userCard = new Card(value, "#card-template", openImagePopup).generateCard();
+  sectionCard.addItem(userCard)
+
+  formAddPopupValid. enableValidation()
+  classAddPopup.close();
 }
- 
-
-//   formAddPopupValid.resetValidation()
-//   classAddPopup.close();
-// }
 
 
-// const formEditPopupValid = new FormValidator(validationConfig, formEditCard);
-// formEditPopupValid.enableValidation();
 
-// const formAddPopupValid = new FormData(validationConfig, formAddCard);
-// formAddPopupValid.enableValidation();
+
+const formEditPopupValid = new FormValidator(validationConfig, formEditCard);
+formEditPopupValid.enableValidation();
+
+const formAddPopupValid = new FormValidator(validationConfig, formAddCard);
+formAddPopupValid.enableValidation();
 
  
 //попап редактирования профиля

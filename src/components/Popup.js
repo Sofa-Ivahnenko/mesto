@@ -16,14 +16,14 @@ export default class Popup {
             this.close();
       }
     }
-    
+
     setEventListeners(){
-        this._popupElement.addEventListener("click", function  (evt) {
+        this._popupElement.addEventListener("click", (evt) => {
             if (evt.target.classList.contains("popup_opened") || evt.target.classList.contains("popup__close-button")) {
               this.close();
             }
           });
-        this._popupElement.querySelector('.popup__close-button').addEventListener('click', () => { this.close() });
+        // this._popupElement.querySelector('.popup__close-button').addEventListener('click', () => { this.close() });
     }
 }
 
