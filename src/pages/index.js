@@ -48,13 +48,13 @@ function openImagePopup(name, link) {
 
 const userInfo = new UserInfo ({
 	name: '.profile__title',
-	description: '.profile__paragraph'
+	description: '.profile__subtitle'
 });
 
 
 function handleSubmitEditForm(value) {
-  console.log(value);
-  userInfo.setUserInfo(value.person, value.about)
+
+  userInfo.setUserInfo(value)
   classEditPopup.close();
  
 }
