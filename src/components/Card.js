@@ -70,15 +70,6 @@ export class Card {
       this._image.addEventListener('click', () => {
         this._handleCardClick(this._name, this._link);
       });
-
-      // if (!this._isUserCard) {
-      //   this._delet.remove();
-      //   this._delet = null;
-      // } else {
-      //   this._element.querySelector('.card__button-delet').addEventListener('click', (event) => {
-      //     this._handleRemoveButton(event);
-      //   });
-      // }
     }
 
       // проверка, стоит ли лайк на карточке
