@@ -14,11 +14,11 @@ export default class Api{
   
     // получение карточек с сервера
     getCardsList(){
-      return fetch(`${this._baseUrl}/cards`,{
-        headers: this._headers,
-      }).then(res => this._parseResponse(res));
+      return fetch(`${this._baseUrl}/cards`, {
+        headers: this._headers
+      })
+        .then(res => this._parseResponse(res));
     }
-  
     // добавление новой карточки через попап
     creatCard(data) {
       return fetch(`${this._baseUrl}/cards`, {
@@ -28,7 +28,8 @@ export default class Api{
           name: data.name,
           link: data.link
         })
-      }).then(res => this._parseResponse(res));
+      })
+        .then(res => this._parseResponse(res));
     }
   
     // удаление карточки 
@@ -36,7 +37,8 @@ export default class Api{
       return fetch(`${this._baseUrl}/cards/${cardId}`, {
         method: 'DELETE',
         headers: this._headers
-      }).then(res => this._parseResponse(res));
+      })
+        .then(res => this._parseResponse(res));
     }
   
     // поставить лайк карточке
@@ -44,22 +46,25 @@ export default class Api{
       return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
         method: 'PUT',
         headers: this._headers
-      }).then(res => this._parseResponse(res));
-    }
+      })
+        .then(res => this._parseResponse(res));
+    }  
   
     // удаление лайка
     deleteLike(cardId) {
       return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
         method: 'DELETE',
         headers: this._headers
-      }).then(res => this._parseResponse(res));
+      })
+        .then(res => this._parseResponse(res));
     }
   
     // получение информации о пользователе с сервера
     getUserInfo() {
       return fetch(`${this._baseUrl}/users/me`, {
-        headers: this._headers,
-      }).then(res => this._parseResponse(res));
+        headers: this._headers
+      })
+        .then(res => this._parseResponse(res));
     }
   
     // редактирование информации о пользователе через попап
@@ -68,10 +73,11 @@ export default class Api{
         method: 'PATCH',
         headers: this._headers,
         body: JSON.stringify({
-          name: data.user,
+          name: data.username,
           about: data.job
         })
-      }).then(res => this._parseResponse(res));
+      })
+        .then(res => this._parseResponse(res));
     }
   
     // редактирование аватара пользователя через попап
@@ -82,6 +88,7 @@ export default class Api{
         body: JSON.stringify({
           avatar: data.avatar
         })
-      }).then(res => this._parseResponse(res));
+      })
+        .then(res => this._parseResponse(res));
     }
   }  
