@@ -13,6 +13,7 @@
             <main>
                 <section class="profile">
                     <img class="profile__avatar" src="<%=require('./images/profile/image.svg')%>" alt="Жак-Ив Кусто">
+                    <button class="profile__avatar-btn"></button>
                     <div class="profile__info">
                         <div class="profile__text">
                             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -104,6 +105,36 @@
                 </div>
             </section>
 
+            <section class="popup popupAvatar">
+                <div class="popup__container">
+                    <form name="edit-avatar-form" action="#" class="popup__content popupAvatar__content" id="avatarform" novalidate> 
+                    <h2 class="popup__heading">Обновить аватар</h2>
+                        <label class="popup__form">
+                        <input
+                            type="url"
+                            name="avatar"
+                            id="avatar"
+                            placeholder="Ссылка на картинку"
+                            class="popup__input popup__input_type_avatar"
+                            required>
+                        <span class="avatar-error popup__error"></span>
+                        </label>
+                        <button type="submit" class="popup__save-button popupAvatar__save-button">Сохранить</button>
+                    </form>
+                    <button type="button" class="popup__close-button popupAvatar__close-button"></button>
+                </div>
+            </section>
+
+            <section class="popup popupDelet">
+                <div class="popup__container">
+                  <button type="button" class="popup__close-button popupDelet__close-button"></button>
+                  <h3 class="popup__heading">Вы уверены?</h3>
+                  <form name="delete-form" action="#" class="popup__content popupDelet__content" novalidate>
+                      <button type="submit" class="popup__save-button popupDelet__save-button">Да</button>
+                  </form>
+                </div>
+            </section>
+
             <section class="popup popupView">
                 <div class="popupView__content">
                     <button type="button" class="popup__close-button popupView__close-button"></button>
@@ -120,6 +151,7 @@
                     <div class="card__content">
                         <h2 class="card__title"></h2>
                         <button class="card__button" type="button"></button>
+                        <span class="card__likes-counter"></span>
                     </div>
                     <button class="card__button-delet" type="button"></button>
                 </li>
