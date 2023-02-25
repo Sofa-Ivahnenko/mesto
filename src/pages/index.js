@@ -95,7 +95,7 @@ editAvatarPopup.setEventListeners();
 
 // обработчик кнопки редактирования аватара пользователя
 buttonEditAvatar.addEventListener('click', () => {
-  formAvatarPopupValid.toggleButtonState();    
+  formAvatarPopupValid.resetValidation();    
   editAvatarPopup.open();
 });
 
