@@ -16,7 +16,7 @@ const formAddCard = popupAddNewCard.querySelector('.popupCard__content');
 // попап редактирования аватара пользователя
 const popupEditAvatar = document.querySelector('.popupAvatar');
 // Форма редактирования аватара пользователя
-const formEditAvatar = popupEditAvatar.querySelector('.popupAvatar__content');
+const formEditAvatar = popupEditAvatar.querySelector('#avatarform');
 // кнопка редактирования аватара пользователя
 const buttonEditAvatar = document.querySelector('.profile__avatar-btn');
 
