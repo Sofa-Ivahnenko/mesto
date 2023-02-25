@@ -18,4 +18,9 @@ export default class UserInfo {
         this._job.textContent = data.about;
         this._avatar.src = data.avatar;
     }
+
+    setUserAvatar({newIconAvatar}) {
+        this._avatar.src = newIconAvatar;
+      }
+    
 }

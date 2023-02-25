@@ -19,8 +19,6 @@ const popupEditAvatar = document.querySelector('.popupAvatar');
 const formEditAvatar = popupEditAvatar.querySelector('.popupAvatar__content');
 // кнопка редактирования аватара пользователя
 const buttonEditAvatar = document.querySelector('.profile__avatar-btn');
-// аватар пользователя
-const avatar = document.querySelector('.profile__avatar');
 
 const validationConfig = {
   formSelector: '.popup__content',
@@ -32,5 +30,4 @@ const validationConfig = {
 }
 
 export {popupEditProfile, profileEditBtn, formEditCard, inputInfoName, inputInfoJob, formAddCard,
-    popupAddNewCardOpenBtn, popupAddNewCard, buttonEditAvatar, formEditAvatar, validationConfig,
-  avatar};
+    popupAddNewCardOpenBtn, popupAddNewCard, buttonEditAvatar, formEditAvatar, validationConfig};

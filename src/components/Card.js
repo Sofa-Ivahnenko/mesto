@@ -5,8 +5,8 @@ export class Card {
       this._likes = data.likes;
       this._cardId = data._id;
 
-      this._UserId = userId,
-      this._isUserCard = userId === data.owner._id;
+      this._userId = userId;
+      this._cardIdOwner = data.owner._id;
 
       this._templateSelector = templateSelector;
 
@@ -28,7 +28,7 @@ export class Card {
       // Запишем разметку в приватное поле _element. 
       // Так у других элементов появится доступ к ней.
       this._element = this._getTemplate ();
-      this._delet = this._element.querySelector('.card__button-delet');
+      this._deletBtn = this._element.querySelector('.card__button-delet');
       this._button = this._element.querySelector('.card__button');
       this._image = this._element.querySelector('.card__image');
       this._setEventListeners();
@@ -63,7 +63,7 @@ export class Card {
         }
       })
 
-      this._delet.addEventListener('click', () => {
+      this._deletBtn.addEventListener('click', () => {
         this._handleDeleteIconClick(this._cardId);
       });
     
@@ -90,8 +90,8 @@ export class Card {
   
     // проверяем владельца карточки и убираем кнопку Delete
     _hasDeleteBtn() {
-      if (this._userId !== this._cardOwnerId) {
-        this._delet.remove();
+      if (this._userId !== this._cardIdOwner) {
+        this._deletBtn.remove();
       }
     }
 }

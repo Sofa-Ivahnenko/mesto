@@ -1,8 +1,7 @@
 import './index.css';
 
 import {profileEditBtn, formEditCard, inputInfoName, inputInfoJob, formAddCard,
-  popupAddNewCardOpenBtn, buttonEditAvatar, formEditAvatar,validationConfig,
-avatar} from '../utils/elements.js';
+  popupAddNewCardOpenBtn, buttonEditAvatar, formEditAvatar,validationConfig} from '../utils/elements.js';
 
 import Card from '../components/Card.js';
 import FormValidator  from '../components/FormValidator.js';
@@ -24,18 +23,16 @@ const api = new Api({
 
 let userId;
 
-//загрузка готовых карточек с сервера
-api.getCardsList().then((res)=>{
-  sectionCard.renderItems(res)}).catch((err) => {
-    console.log(`Ошибка: ${err}`)});
-
-//загрузка готовых данных о пользователе с сервера
-api.getUserInfo().then((userData)=>{
+// Загрузка готовых карточек и данных о пользователе с сервера
+Promise.all([api.getCardsList(), api.getUserInfo()])
+  .then(([initialCards, userData]) => {
     userInfo.setUserInfo(userData);
     userId = userData._id;
-    }).catch((err) => {
-      console.log(`Ошибка: ${err}`);
-    });
+    sectionCard.renderItems(initialCards);
+  })
+  .catch((err) => {
+    console.log(`Ошибка: ${err}`);
+  });
 
 
 /* ---------- Функционал для работы с профилем пользователя ----------- */  
@@ -80,8 +77,8 @@ const editAvatarPopup = new PopupWithForm({
   handleFormSubmit: (data) => {
     editAvatarPopup.loading(true);
     api.editAvatar(data)
-      .then((data) => {
-        avatar.src = data.avatar;
+      .then((data) => { 
+        userInfo.setUserAvatar({newIconAvatar: data.avatar});    
         editAvatarPopup.close();
       })
       .catch((err) => {
@@ -162,7 +159,7 @@ const renderCard = (data) => {
 // создание экземпляра класса Section
 const sectionCard = new Section({
    renderer:(card) =>{
-    sectionCard.addItem(renderCard(card));
+    sectionCard.addItem(renderCard(card));  
    },
 }, '.cards');
 
