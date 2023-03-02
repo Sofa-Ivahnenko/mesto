@@ -1,9 +1,6 @@
 * [![Проект](
 https://img.shields.io/badge/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%9C%D0%B5%D1%81%D1%82%D0%BE-orange)](https://sofa-ivahnenko.github.io/mesto/)
 
-Проект: " Mesto".
-
-<!-- *  [Ссылка на проект] (https://sofa-ivahnenko.github.io/mesto/) -->
 ***
 
 
